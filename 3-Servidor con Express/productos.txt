@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Escuadra",
+    "price": 123.45,
+    "id": 1
+  },
+  {
+    "title": "Calculadora",
+    "price": 223.45,
+    "id": 2
+  },
+  {
+    "title": "Globo Terraqueo",
+    "price": 345,
+    "id": 3
+  },
+  {
+    "title": "Compas",
+    "price": 200,
+    "id": 4
+  },
+  {
+    "title": "Regla",
+    "price": 250,
+    "id": 5
+  },
+  {
+    "title": "Transportador",
+    "price": 150,
+    "id": 6
+  },
+  {
+    "title": "Lapiz",
+    "price": 50,
+    "id": 7
+  },
+  {
+    "title": "Pluma",
+    "price": 99,
+    "id": 8
+  },
+  {
+    "title": "Abrochadora",
+    "price": 600,
+    "id": 9
+  },
+  {
+    "title": "Fibras",
+    "price": 352,
+    "id": 10
+  }
+]
