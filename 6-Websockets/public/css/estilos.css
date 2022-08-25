@@ -10,3 +10,27 @@ label {
 .jumbotron {
     min-height: 100vh;
 }
+
+#author {
+    color: blue;
+}
+#fechaMsj{
+    font-style: normal;
+    color:  #804000;
+}
+
+
+#textMsj {
+    color: green;
+    font-style: italic;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 500px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}

@@ -64,5 +64,47 @@
     "price": "150",
     "src": "https://illustoon.com/photo/7379.png",
     "id": 11
+  },
+  {
+    "name": "Marcadores",
+    "price": "250",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Coloured_sharpie_markers.jpg/220px-Coloured_sharpie_markers.jpg",
+    "id": 12
+  },
+  {
+    "name": "Pinceles",
+    "price": "350",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/6/68/Brushes_2.jpg",
+    "id": 13
+  },
+  {
+    "name": "Plasticola",
+    "price": "120",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/8/85/Pritt_Sticks.JPG",
+    "id": 14
+  },
+  {
+    "name": "Cartulina",
+    "price": "98",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Coloured%2C_textured_craft_card.jpg",
+    "id": 15
+  },
+  {
+    "name": "Sacapuntas",
+    "price": "50",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Sacapuntametalico.gif",
+    "id": 16
+  },
+  {
+    "name": "Cintex",
+    "price": "89",
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Sticky_tape.jpg/220px-Sticky_tape.jpg",
+    "id": 17
+  },
+  {
+    "name": "Post-it",
+    "price": "150",
+    "src": "https://multimedia.3m.com/mws/media/1061971P/notas-adhesivas-post-it-cubo-5-colores-neon.jpg",
+    "id": 18
   }
 ]

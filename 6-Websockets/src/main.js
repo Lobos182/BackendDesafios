@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 
 const { Server: HttpServer } = require('http')
 const { Server: Socket } = require('socket.io')
@@ -14,7 +14,7 @@ const app = express();
 const httpServer = new HttpServer(app);
 const io = new Socket(httpServer);
 
-const ProductosApi = new ContenedorArchivo('../resources/products.txt');
+const ProductosApi = new ContenedorArchivo('./data/products.txt');
 const mensajes = [];
 
 

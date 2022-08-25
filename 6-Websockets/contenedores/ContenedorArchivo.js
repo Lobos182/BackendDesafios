@@ -15,7 +15,7 @@ class Contenedor {
             await fs.writeFile(this.ruta, JSON.stringify(products, null, 2));
             console.log('Guardado Exitoso');
         } catch (error) {
-            console.log('Error de Escritura');
+            console.log('Error de Escritura al Guardar');
             console.log(error);
         }
 
@@ -23,6 +23,7 @@ class Contenedor {
     async getById(id) {
         const products = await this.getAll();
         const productById = products.find(p => p.id == id);
+        console.log(`Se retorna el producto buscado por id es ${JSON.stringify(productById)}`);
         return productById;
     }
     async getAll() {
@@ -30,7 +31,7 @@ class Contenedor {
             let products = await fs.readFile(this.ruta, 'utf-8');
             return JSON.parse(products);
         } catch (error) {
-            console.log('Error Lectura ó Listado Vacio');
+            console.log('Error Lectura ó Listado Vacio, al traer TODOS los productos');
             return [];
         }
     }
@@ -43,7 +44,7 @@ class Contenedor {
             await fs.writeFile(this.ruta, JSON.stringify(newProducts, null, 2));
             console.log('Elimando Correcto');
         } catch (error) {
-            console.log('Error de Escritura');
+            console.log(`Error de Escritura al Eliminar el producto ${JSON.stringify(product)}`);
         }
 
     }
@@ -52,7 +53,7 @@ class Contenedor {
             console.log('Se va a ELIMINAR TODOS LOS ELEMENTOS');
             await fs.writeFile(this.ruta, "[]");
         } catch (error) {
-            console.log('Error de Escritura');
+            console.log('Error de Escritura al ELIMINAR TODOS los productos');
 
         }
     }

@@ -1,23 +1,24 @@
 const socket = io.connect();
-
 //------------------------------------------------------------------------------------
 
 const formAgregarProducto = document.getElementById('formAgregarProducto')
 formAgregarProducto.addEventListener('submit', e => {
     e.preventDefault()
     const productos = {
-            title: document.getElementById('nombre').value,
-            price: document.getElementById('precio').value,
-            src: document.getElementById('foto').value
+        name: document.getElementById('nombre').value,
+        price: document.getElementById('precio').value,
+        src: document.getElementById('foto').value
     }
-    socket.emit('new-producto', productos)
+    socket.emit('new-producto', productos);
+    document.getElementById('formAgregarProducto').reset();
+
 })
 
 socket.on("productos", async (productos) => {
     const html = await makeHtmlTable(productos);
     document.getElementById("productos").innerHTML = html;
-    console.log('entre al socket q escucha de productos')
-  });
+
+});
 
 function makeHtmlTable(productos) {
     return fetch('plantillas/tabla-productos.hbs')
@@ -28,6 +29,7 @@ function makeHtmlTable(productos) {
             return html
         })
 }
+
 
 //-------------------------------------------------------------------------------------
 
@@ -41,6 +43,7 @@ formPublicarMensaje.addEventListener('submit', e => {
     const nuevoMensaje = {
         author: inputUsername.value,
         text: inputMensaje.value,
+        date: new Date().toLocaleString()
     }
 
     socket.emit('new-message', nuevoMensaje);
@@ -55,16 +58,27 @@ socket.on('mensajes', mensajes => {
 
 function makeHtmlList(mensajes) {
     return mensajes.map((elem) => {
-        return (`<div><strong>${elem.author}</strong>: <em>${elem.text}</em></div>`)
+        return (`<div id="author"><strong>${elem.author}</strong><em id="fechaMsj">(${elem.date})<em>: <em id="textMsj">${elem.text}</em></div>`)
     }).join(' ');
 }
 
 inputUsername.addEventListener('input', () => {
+    campo = inputUsername;
+    valido = document.getElementById('emailOK');
     const hayEmail = inputUsername.value.length
     const hayTexto = inputMensaje.value.length
-    inputMensaje.disabled = !hayEmail
-    btnEnviar.disabled = !hayEmail || !hayTexto
-})
+    emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+    if (emailRegex.test(campo.value)) {
+        valido.innerText = "válido";
+        inputMensaje.removeAttribute('disabled');
+    } else {
+        valido.innerText = "incorrecto";
+        inputMensaje.disable
+        btnEnviar.disable
+    }
+
+});
 
 inputMensaje.addEventListener('input', () => {
     const hayTexto = inputMensaje.value.length
