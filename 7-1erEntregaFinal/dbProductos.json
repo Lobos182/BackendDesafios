@@ -1,0 +1,67 @@
+[{
+    "title": "Escuadra",
+    "price": 123.45,
+    "id": 1,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg"
+  },
+  {
+    "title": "Calculadora",
+    "price": 223.45,
+    "id": 2,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Casio_fx-85WA_20050529.jpg"
+  },
+  {
+    "title": "Globo Terraqueo",
+    "price": 345,
+    "id": 3,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/0/0d/GlobeSK.jpg"
+  },
+  {
+    "title": "Compas",
+    "price": 200,
+    "id": 4,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Delin_07_Comp%C3%A1s.jpg/800px-Delin_07_Comp%C3%A1s.jpg"
+  },
+  {
+    "title": "Regla",
+    "price": 250,
+    "id": 5,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Regla_horizontal_10.svg/600px-Regla_horizontal_10.svg.png"
+  },
+  {
+    "title": "Transportador",
+    "price": 150,
+    "id": 6,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/5/56/Goniometro.jpg"
+  },
+  {
+    "title": "Lapiz",
+    "price": 50,
+    "id": 7,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Olowki_RB.jpg/100px-Olowki_RB.jpg"
+  },
+  {
+    "title": "Pluma",
+    "price": 99,
+    "id": 8,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Inoxcrom_Wall_Street._Nib._M.jpg/220px-Inoxcrom_Wall_Street._Nib._M.jpg"
+  },
+  {
+    "title": "Abrochadora",
+    "price": 600,
+    "id": 9,
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/2017_Zszywacz_biurowy.jpg/1200px-2017_Zszywacz_biurowy.jpg"
+  },
+  {
+    "title": "Fibras",
+    "price": 352,
+    "id": 10,
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_939026-MLA42255258568_062020-W.jpg"
+  },
+  {
+    "title": "Crayones",
+    "price": "150",
+    "thumbnail": "https://illustoon.com/photo/7379.png",
+    "id": 11
+  }
+]

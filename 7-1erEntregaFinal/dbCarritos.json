@@ -1,0 +1,21 @@
+[{
+    "id": 2,
+    "timestamp": 1661970752080,
+    "productos": {
+      "title": "Escuadra",
+      "price": 123.45,
+      "id": 1,
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg"
+    }
+  },
+  {
+    "id": 3,
+    "timestamp": 1661970753113,
+    "productos": {
+      "title": "Globo Terraqueo",
+      "price": 345,
+      "id": 3,
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/0/0d/GlobeSK.jpg"
+    }
+  }
+]
