@@ -1,0 +1,195 @@
+./bin/mongod --dbpath ./_data //para inciar el servidor
+./bin/mongosh.exe //en otra ventana para entrar a mongo
+show databases    // Veo de bases de datos creadas y disponibles
+db //para ver en que base de datos estoy actualmente
+use ecommerce //este comando me cambia a la base de datos que yo le nombro, pero sino existe la crea y me cambia a esa base.
+show collection //para ver q colecciones hay en la db si no hay ninguna no muestra nada
+
+//MENSAJES
+
+db.mensajes.insertMany([   // con este comando decimos que en la db ecommerce en este caso, cargue varios datos en dicha coleccion, sino existe la crea y carga los datos
+    {
+    "date": "2022-8-27",
+    "mail": "alsjdhalsd@lijdfalskda",
+    "text": "alkjshdajklshdkjas"
+  },
+  {
+    "date": "2022-8-27",
+    "mail": "sadasdasd@kljahsdjka",
+    "text": "hkgasdfkljhsgdfksa"
+  },
+  {
+    "date": "2022-8-27",
+    "mail": "sadasdasd@kljahsdjka",
+    "text": "hkgasdfkljhsgdfksa"
+  },
+  {
+    "date": "2022-8-2722:14",
+    "mail": "skludhflskd@lksajdhfkasd",
+    "text": "laksuhdgflasd"
+  },
+  {
+    "date": "2022-8-27  22:19",
+    "mail": "lakhjsgdlaskda@kjashdlkjas",
+    "text": "kauysgdkuaysgdkauyighdaiysghdaishgdliasud"
+  },
+  {
+    "date": "2022-8-27  22:25",
+    "mail": "Daniel@gmail.com",
+    "text": "Hola"
+  },
+  {
+    "date": "2022-8-27  22:29",
+    "mail": "Daniel@gmail.com",
+    "text": "DAni"
+  },
+  {
+    "date": "2022-9-7  22:31",
+    "mail": "Fer@FEr",
+    "text": "Fer44"
+  },
+  {
+    "date": "2022-9-8  15:30",
+    "mail": "Daniel@gmailito.com",
+    "text": "Anteultimo mensaje"
+  },
+  {
+    "date": "2022-9-8  16:22",
+    "mail": "Danielito@gmail.com",
+    "text": "Ultimo mensaje"
+  }
+])    // Mensajes insertados
+
+
+//PRODUCTOS
+
+db.productos.insertMany([ //con este comando decimos que en la db ecommerce en este caso, cargue varios datos en dicha coleccion, sino existe la crea y carga los datos
+  {
+    "name": "Escuadra",
+    "price": 123.45,
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Squadra_45.jpg"
+  },
+  {
+    "name": "Calculadora",
+    "price": 223.45,
+    "src": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Casio_fx-85WA_20050529.jpg"
+  },
+  {
+    "name": "Globo Terraqueo",
+    "price": 345,
+    "src": "https://upload.wikimedia.org/wikipedia/commons/0/0d/GlobeSK.jpg"
+  },
+  {
+    "name": "Compas",
+    "price": 200,
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Delin_07_Comp%C3%A1s.jpg/800px-Delin_07_Comp%C3%A1s.jpg"
+  },
+  {
+    "name": "Regla",
+    "price": 250,
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Regla_horizontal_10.svg/600px-Regla_horizontal_10.svg.png"
+  },
+  {
+    "name": "Transportador",
+    "price": 150,
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/56/Goniometro.jpg"
+  },
+  {
+    "name": "Lapiz",
+    "price": 50,
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Olowki_RB.jpg/100px-Olowki_RB.jpg"
+  },
+  {
+    "name": "Pluma",
+    "price": 99,
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Inoxcrom_Wall_Street._Nib._M.jpg/220px-Inoxcrom_Wall_Street._Nib._M.jpg"
+  },
+  {
+    "name": "Abrochadora",
+    "price": 600,
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/2017_Zszywacz_biurowy.jpg/1200px-2017_Zszywacz_biurowy.jpg"
+  },
+  {
+    "name": "Fibras",
+    "price": 352,
+     "src": "https://http2.mlstatic.com/D_NQ_NP_939026-MLA42255258568_062020-W.jpg"
+  },
+  {
+    "name": "Crayones",
+    "price": "150",
+    "src": "https://illustoon.com/photo/7379.png",
+    ])    // Productos insertados 
+
+
+// Mostrar todos los documentos de las colecciones
+
+db.mensajes.find()
+db.productos.find()
+
+// Mostrar la cantidad de documentos de cada colecciones
+
+db.mensajes.countDocuments()
+db.productos.countdocuments()
+
+
+//CRUD
+
+// Agregar un producto en la coleccion de productos
+
+db.productos.insertOne({"name":"nuevo Producto","price":4800,"src":"https://imagen.png"})
+
+// Consultas
+
+ - Listar los productos con precio menor a 1000 pesos
+
+db.productos.find({"price" : {$lt : 1000}})
+
+ - Listar los productos con precio entre los 1000 a 3000 pesos
+
+db.productos.find({"price" : {$gte : 1000 , $lte : 3000}})
+
+ - Listar los productos con precio mayor a 3000 pesos
+
+db.productos.find({"price" : {$gt : 3000}})
+
+ - Realizar una consulta que traiga sólo el nombre del tercer producto más barato
+
+db.productos.find({},{_id:0,"name":1}).sort({"price":1}).limit(1).skip(2)
+!! Para probar que el resultado es el correcto, el siguiente comando muestra la lista de 
+   todos los elementos ordenados por precios pero solo con sus nombres
+    - db.productos.find({},{_id:0,"name":1}).sort({"price":1})
+
+ - Hacer una actualización sobre todos los productos, agregando el campo stock a todos
+ellos con un valor de 100.
+
+db.productos.updateMany({}, {$set :{"stock" : 100}})
+db.productos.find()
+
+ - Cambiar el stock a cero de los productos con precios mayores a 4000 pesos.
+
+db.productos.updateMany({"price" : {$gt : 4000}}, {$set :{"stock" : 0}})
+
+ - Borrar los productos con precio menor a 1000 pesos
+
+db.productos.deleteMany({"price" : {$lt : 1000}})
+
+//Permisos de usuario
+
+Crear un usuario 'pepe' clave: 'asd456' que sólo pueda leer la base de datos ecommerce.
+Verificar que pepe no pueda cambiar la información.
+
+use admin
+db.createUser({
+  user : "pepe",
+  pwd : "asd456",
+  roles : [
+    {role :"read", db:"ecommerce"}    
+  ]
+})
+
+//volvemos a levantar el servidor para q tome lo cambios que hicimos
+
+./bin/mongosh -u pepe 
+//levantamos el cliente pero agregamos -u espacio y el nombre del user q puede leer y nos va a pedir la contraseña
+// y una vez q entramos no podemos por ej insertar nos tira un error q el usuario no tiene autorización de insertar solo leer.
+
